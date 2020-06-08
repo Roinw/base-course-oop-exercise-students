@@ -1,4 +1,4 @@
-import AerialVehicles.F15;
+import AerialVehicles.FightJet.F15;
 import Entities.Coordinates;
 import Missions.AttackMission;
 import Missions.BdaMission;

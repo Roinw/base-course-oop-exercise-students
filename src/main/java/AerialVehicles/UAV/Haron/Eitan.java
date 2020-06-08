@@ -1,4 +1,4 @@
-package AerialVehicles;
+package AerialVehicles.UAV.Haron;
 
 import Missions.Mission;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-import AerialVehicles.Zik;
+import AerialVehicles.UAV.Hermes.Zik;
 import Entities.Coordinates;
 import Missions.AttackMission;
 import Missions.BdaMission;

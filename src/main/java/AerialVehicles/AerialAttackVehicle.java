@@ -1,5 +1,7 @@
 package AerialVehicles;
 
+import Missions.AttackMission;
+import Missions.Mission;
 import Missions.MissionTypeException;
 
 public interface AerialAttackVehicle {
@@ -12,5 +14,20 @@ public interface AerialAttackVehicle {
 
     void setMissileType(String missileType);
 
-    String attack() throws MissionTypeException;
+    Mission getMission();
+
+    String getPilotName();
+
+    default String attack() throws MissionTypeException {
+        if (getMission() instanceof AttackMission) {
+            AttackMission attackMission = (AttackMission) getMission();
+            return getPilotName() + ": " +
+                    this.getClass().getSimpleName() + " Attaking " +
+                    attackMission.getTarget() + " with: " +
+                    getMissileType() + "X" +
+                    getNumOfMissiles();
+        } else {
+            throw new MissionTypeException("Failed to attack, because mission isn't attackMission");
+        }
+    }
 }

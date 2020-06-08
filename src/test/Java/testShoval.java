@@ -1,4 +1,4 @@
-import AerialVehicles.Shoval;
+import AerialVehicles.UAV.Haron.Shoval;
 import Entities.Coordinates;
 import Missions.AttackMission;
 import Missions.BdaMission;
