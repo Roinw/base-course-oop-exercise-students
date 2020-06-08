@@ -1,5 +1,4 @@
-import AerialVehicles.FighterJets.F15;
-import AerialVehicles.UAVs.Haron.Eitan;
+import AerialVehicles.Eitan;
 import Entities.Coordinates;
 import Missions.AttackMission;
 import Missions.BdaMission;
@@ -17,7 +16,7 @@ public class testEitan {
     private Eitan eitan = new Eitan(1, "nimrod", "elint", "Sheleg", attackMission, 52, true);
 
     @Test
-    public void testAttack(){
+    public void testAttack() {
         String expectedMessage = "Sheleg: Eitan Attacking suspect house with: nimrodX1";
         String message = eitan.attack();
         assertEquals(message, expectedMessage);
@@ -28,12 +27,12 @@ public class testEitan {
         eitan.setMission(intelligenceMission);
         String expectedMessage = "Sheleg: Eitan Collecting Data in Deir al Balah with sensor type: elint";
         String message = eitan.collectIntelligence();
-        assertEquals(message,expectedMessage);
+        assertEquals(message, expectedMessage);
     }
 
     @Test
-    public void testBdaNotImplemented(){
-        try{
+    public void testBdaNotImplemented() {
+        try {
             Eitan.class.getMethod("preformBda", (Class<?>[]) null);
             fail();
         } catch (NoSuchMethodException | SecurityException e) {
@@ -42,12 +41,12 @@ public class testEitan {
     }
 
     @Test
-    public void testRepairEitan(){
+    public void testRepairEitan() {
         eitan.setHoursOfFlightSinceLastRepair(125);
         eitan.check();
-        assertEquals(eitan.getHoursOfFlightSinceLastRepair(),125);
+        assertEquals(eitan.getHoursOfFlightSinceLastRepair(), 125);
         eitan.setHoursOfFlightSinceLastRepair(155);
         eitan.check();
-        assertEquals(eitan.getHoursOfFlightSinceLastRepair(),0);
+        assertEquals(eitan.getHoursOfFlightSinceLastRepair(), 0);
     }
 }

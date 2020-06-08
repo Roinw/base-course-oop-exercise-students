@@ -1,5 +1,4 @@
-import AerialVehicles.UAVs.Haron.Shoval;
-import AerialVehicles.UAVs.Hermes.Kochav;
+import AerialVehicles.Kochav;
 import Entities.Coordinates;
 import Missions.AttackMission;
 import Missions.BdaMission;
@@ -29,7 +28,7 @@ public class testKochav {
         kochav.setMission(intelligenceMission);
         String expectedMessage = "Snoop: Kochav Collecting Data in Deir al Balah with sensor type: commint";
         String message = kochav.collectIntelligence();
-        assertEquals(message,expectedMessage);
+        assertEquals(message, expectedMessage);
     }
 
     @Test
@@ -37,16 +36,16 @@ public class testKochav {
         kochav.setMission(bdaMission);
         String expectedMessage = "Snoop: Kochav taking pictures of suspect house with: thermal camera";
         String message = kochav.preformBda();
-        assertEquals(message,expectedMessage);
+        assertEquals(message, expectedMessage);
     }
 
     @Test
-    public void testRepairZik(){
+    public void testRepairZik() {
         kochav.setHoursOfFlightSinceLastRepair(75);
         kochav.check();
-        assertEquals(kochav.getHoursOfFlightSinceLastRepair(),75);
+        assertEquals(kochav.getHoursOfFlightSinceLastRepair(), 75);
         kochav.setHoursOfFlightSinceLastRepair(102);
         kochav.check();
-        assertEquals(kochav.getHoursOfFlightSinceLastRepair(),0);
+        assertEquals(kochav.getHoursOfFlightSinceLastRepair(), 0);
     }
 }

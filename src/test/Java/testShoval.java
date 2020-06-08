@@ -1,5 +1,4 @@
-import AerialVehicles.UAVs.Haron.Eitan;
-import AerialVehicles.UAVs.Haron.Shoval;
+import AerialVehicles.Shoval;
 import Entities.Coordinates;
 import Missions.AttackMission;
 import Missions.BdaMission;
@@ -7,7 +6,7 @@ import Missions.IntelligenceMission;
 import Missions.MissionTypeException;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class testShoval {
     Coordinates coordinatesToAttack = new Coordinates(31.389906, 34.330190);
@@ -29,7 +28,7 @@ public class testShoval {
         shoval.setMission(intelligenceMission);
         String expectedMessage = "Lagertha: Shoval Collecting Data in Deir al Balah with sensor type: commint";
         String message = shoval.collectIntelligence();
-        assertEquals(message,expectedMessage);
+        assertEquals(message, expectedMessage);
     }
 
     @Test
@@ -37,16 +36,16 @@ public class testShoval {
         shoval.setMission(bdaMission);
         String expectedMessage = "Lagertha: Shoval taking pictures of suspect house with: B&W camera";
         String message = shoval.preformBda();
-        assertEquals(message,expectedMessage);
+        assertEquals(message, expectedMessage);
     }
 
     @Test
-    public void testRepairShoval(){
+    public void testRepairShoval() {
         shoval.setHoursOfFlightSinceLastRepair(125);
         shoval.check();
-        assertEquals(shoval.getHoursOfFlightSinceLastRepair(),125);
+        assertEquals(shoval.getHoursOfFlightSinceLastRepair(), 125);
         shoval.setHoursOfFlightSinceLastRepair(155);
         shoval.check();
-        assertEquals(shoval.getHoursOfFlightSinceLastRepair(),0);
+        assertEquals(shoval.getHoursOfFlightSinceLastRepair(), 0);
     }
 }

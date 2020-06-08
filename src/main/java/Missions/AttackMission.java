@@ -1,8 +1,19 @@
 package Missions;
 
-import AerialVehicles.AerialAttackVehicle;
-import AerialVehicles.AerialBdaVehicle;
-import AerialVehicles.AerialVehicle;
+public class AttackMission extends Mission {
 
-public class AttackMission{
+    @Override
+    public void begin() {
+
+    }
+
+    @Override
+    public void cancel() {
+
+    }
+
+    @Override
+    public void finish() {
+
+    }
 }

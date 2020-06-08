@@ -1,7 +1,19 @@
 package Missions;
 
-import AerialVehicles.AerialIntelligenceVehicle;
-import AerialVehicles.AerialVehicle;
+public class IntelligenceMission extends Mission {
 
-public class IntelligenceMission{
+    @Override
+    public void begin() {
+
+    }
+
+    @Override
+    public void cancel() {
+
+    }
+
+    @Override
+    public void finish() {
+
+    }
 }

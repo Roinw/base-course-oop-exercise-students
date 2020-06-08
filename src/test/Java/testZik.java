@@ -1,6 +1,4 @@
-import AerialVehicles.FighterJets.F16;
-import AerialVehicles.UAVs.Haron.Shoval;
-import AerialVehicles.UAVs.Hermes.Zik;
+import AerialVehicles.Zik;
 import Entities.Coordinates;
 import Missions.AttackMission;
 import Missions.BdaMission;
@@ -19,7 +17,7 @@ public class testZik {
 
     @Test
     public void testAttackImplementedInZik() throws MissionTypeException {
-        try{
+        try {
             Zik.class.getMethod("attack", (Class<?>[]) null);
             fail();
         } catch (NoSuchMethodException | SecurityException e) {
@@ -32,7 +30,7 @@ public class testZik {
         zik.setMission(intelligenceMission);
         String expectedMessage = "Fireman Sam: Zik Collecting Data in Deir al Balah with sensor type: elint";
         String message = zik.collectIntelligence();
-        assertEquals(message,expectedMessage);
+        assertEquals(message, expectedMessage);
     }
 
     @Test
@@ -40,16 +38,16 @@ public class testZik {
         zik.setMission(bdaMission);
         String expectedMessage = "Fireman Sam: Zik taking pictures of suspect house with: thermal camera";
         String message = zik.preformBda();
-        assertEquals(message,expectedMessage);
+        assertEquals(message, expectedMessage);
     }
 
     @Test
-    public void testRepairZik(){
+    public void testRepairZik() {
         zik.setHoursOfFlightSinceLastRepair(75);
         zik.check();
-        assertEquals(zik.getHoursOfFlightSinceLastRepair(),75);
+        assertEquals(zik.getHoursOfFlightSinceLastRepair(), 75);
         zik.setHoursOfFlightSinceLastRepair(102);
         zik.check();
-        assertEquals(zik.getHoursOfFlightSinceLastRepair(),0);
+        assertEquals(zik.getHoursOfFlightSinceLastRepair(), 0);
     }
 }

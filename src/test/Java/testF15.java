@@ -1,5 +1,4 @@
-import AerialVehicles.FighterJets.F15;
-import AerialVehicles.FighterJets.F16;
+import AerialVehicles.F15;
 import Entities.Coordinates;
 import Missions.AttackMission;
 import Missions.BdaMission;
@@ -17,10 +16,10 @@ public class testF15 {
     private F15 f15 = new F15("elint", 2, "Spice250", "Donald Duck", attackMission, 10, true);
 
     @Test
-    public void testAttack(){
+    public void testAttack() {
         String expectedMessage = "Donald Duck: F15 Attacking suspect house with: Spice250X2";
         String message = f15.attack();
-        assertEquals(message,expectedMessage);
+        assertEquals(message, expectedMessage);
     }
 
     @Test
@@ -28,12 +27,12 @@ public class testF15 {
         f15.setMission(intelligenceMission);
         String expectedMessage = "Donald Duck: F15 Collecting Data in Deir al Balah with sensor type: elint";
         String message = f15.collectIntelligence();
-        assertEquals(message,expectedMessage);
+        assertEquals(message, expectedMessage);
     }
 
     @Test
-    public void testBdaNotImplemented(){
-        try{
+    public void testBdaNotImplemented() {
+        try {
             F15.class.getMethod("preformBda", (Class<?>[]) null);
             fail();
         } catch (NoSuchMethodException | SecurityException e) {

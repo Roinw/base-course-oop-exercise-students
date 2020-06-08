@@ -1,7 +1,19 @@
 package Missions;
 
-import AerialVehicles.AerialBdaVehicle;
-import AerialVehicles.AerialVehicle;
+public class BdaMission extends Mission {
 
-public class BdaMission {
+    @Override
+    public void begin() {
+
+    }
+
+    @Override
+    public void cancel() {
+
+    }
+
+    @Override
+    public void finish() {
+
+    }
 }
