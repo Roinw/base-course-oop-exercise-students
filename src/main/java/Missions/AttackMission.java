@@ -1,19 +1,17 @@
 package Missions;
 
+import Entities.Coordinates;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class AttackMission extends Mission {
 
-    @Override
-    public void begin() {
+    private String target;
 
-    }
-
-    @Override
-    public void cancel() {
-
-    }
-
-    @Override
-    public void finish() {
-
+    public AttackMission(String target, Coordinates targetCoordinates) {
+        this.target = target;
+        this.targetCoordinates = targetCoordinates;
     }
 }

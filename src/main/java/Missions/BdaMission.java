@@ -1,19 +1,17 @@
 package Missions;
 
+import Entities.Coordinates;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class BdaMission extends Mission {
 
-    @Override
-    public void begin() {
+    private String objective;
 
-    }
-
-    @Override
-    public void cancel() {
-
-    }
-
-    @Override
-    public void finish() {
-
+    public BdaMission(String objective, Coordinates targetCoordinates) {
+        this.objective = objective;
+        this.targetCoordinates = targetCoordinates;
     }
 }

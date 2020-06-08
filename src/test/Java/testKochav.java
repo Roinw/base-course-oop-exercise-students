@@ -13,12 +13,12 @@ public class testKochav {
     AttackMission attackMission = new AttackMission("suspect house", coordinatesToAttack);
     BdaMission bdaMission = new BdaMission("suspect house", coordinatesToAttack);
     IntelligenceMission intelligenceMission = new IntelligenceMission("Deir al Balah", coordinatesToAttack);
-    private Kochav kochav = new Kochav(3, "Dlila", "thermal", "commint", "Snoop", attackMission, 31, true);
+    private Kochav kochav = new Kochav(3, "Dlila", "commint", "thermal", "Snoop", attackMission, 31, true);
 
     @Test
     public void testAttack() throws MissionTypeException {
         kochav.setMission(attackMission);
-        String expectedMessage = "Snoop: Kochav Attacking suspect house with: DlilaX3";
+        String expectedMessage = "Snoop: Kochav Attaking suspect house with: DlilaX3";
         String message = kochav.attack();
         assertEquals(message, expectedMessage);
     }
@@ -34,7 +34,7 @@ public class testKochav {
     @Test
     public void testBda() throws MissionTypeException {
         kochav.setMission(bdaMission);
-        String expectedMessage = "Snoop: Kochav taking pictures of suspect house with: thermal camera";
+        String expectedMessage = "Snoop: Kochav taking pictures of suspect house with: thermal";
         String message = kochav.preformBda();
         assertEquals(message, expectedMessage);
     }

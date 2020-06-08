@@ -13,7 +13,7 @@ public class testZik {
     AttackMission attackMission = new AttackMission("suspect house", coordinatesToAttack);
     BdaMission bdaMission = new BdaMission("suspect house", coordinatesToAttack);
     IntelligenceMission intelligenceMission = new IntelligenceMission("Deir al Balah", coordinatesToAttack);
-    private Zik zik = new Zik("thermal", "elint", "Fireman Sam", bdaMission, 14, true);
+    private Zik zik = new Zik("elint", "thermal", "Fireman Sam", bdaMission, 14, true);
 
     @Test
     public void testAttackImplementedInZik() throws MissionTypeException {
@@ -36,7 +36,7 @@ public class testZik {
     @Test
     public void testBda() throws MissionTypeException {
         zik.setMission(bdaMission);
-        String expectedMessage = "Fireman Sam: Zik taking pictures of suspect house with: thermal camera";
+        String expectedMessage = "Fireman Sam: Zik taking pictures of suspect house with: thermal";
         String message = zik.preformBda();
         assertEquals(message, expectedMessage);
     }

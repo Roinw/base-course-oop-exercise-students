@@ -16,8 +16,8 @@ public class testEitan {
     private Eitan eitan = new Eitan(1, "nimrod", "elint", "Sheleg", attackMission, 52, true);
 
     @Test
-    public void testAttack() {
-        String expectedMessage = "Sheleg: Eitan Attacking suspect house with: nimrodX1";
+    public void testAttack() throws MissionTypeException {
+        String expectedMessage = "Sheleg: Eitan Attaking suspect house with: nimrodX1";
         String message = eitan.attack();
         assertEquals(message, expectedMessage);
     }

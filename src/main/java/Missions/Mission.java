@@ -1,9 +1,24 @@
 package Missions;
 
+import Entities.Coordinates;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public abstract class Mission {
-    public abstract void begin();
 
-    public abstract void cancel();
+    protected Coordinates targetCoordinates;
 
-    public abstract void finish();
+    public void begin() {
+        System.out.println("Start Mission!");
+    }
+
+    public void cancel() {
+        System.out.println("Abort Mission!");
+    }
+
+    public void finish() {
+        System.out.println("Finish Mission!");
+    }
 }

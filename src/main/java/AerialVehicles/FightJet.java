@@ -6,15 +6,17 @@ import Missions.MissionTypeException;
 import lombok.Getter;
 import lombok.Setter;
 
+import static Shard.ShardConstants.FIGHT_JET_MAX_FLIGHT_HOURS_SINCE_LAST_REPAIR;
+
 @Getter
 @Setter
-public class Kochav extends Hermes implements AerialAttackVehicle {
+public class FightJet extends AerialVehicle implements AerialAttackVehicle {
 
     String missileType;
     int numOfMissiles;
 
-    public Kochav(int numOfMissiles, String missileType, String sensorType, String cameraType, String pilotName, Mission mission, int hoursOfFlightSinceLastRepair, boolean isReadyToFly) {
-        super(sensorType, cameraType, pilotName, mission, hoursOfFlightSinceLastRepair, isReadyToFly);
+    public FightJet(int numOfMissiles, String missileType, String pilotName, Mission mission, int hoursOfFlightSinceLastRepair, boolean isReadyToFly) {
+        super(pilotName, mission, hoursOfFlightSinceLastRepair, isReadyToFly);
         this.missileType = missileType;
         this.numOfMissiles = numOfMissiles;
     }
@@ -30,6 +32,13 @@ public class Kochav extends Hermes implements AerialAttackVehicle {
                     this.numOfMissiles;
         } else {
             throw new MissionTypeException("Failed to attack, because mission isn't attackMission");
+        }
+    }
+
+    @Override
+    public void check() {
+        if (hoursOfFlightSinceLastRepair >= FIGHT_JET_MAX_FLIGHT_HOURS_SINCE_LAST_REPAIR) {
+            repair();
         }
     }
 }

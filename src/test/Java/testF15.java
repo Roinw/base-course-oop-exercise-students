@@ -13,11 +13,11 @@ public class testF15 {
     AttackMission attackMission = new AttackMission("suspect house", coordinatesToAttack);
     BdaMission bdaMission = new BdaMission("suspect house", coordinatesToAttack);
     IntelligenceMission intelligenceMission = new IntelligenceMission("Deir al Balah", coordinatesToAttack);
-    private F15 f15 = new F15("elint", 2, "Spice250", "Donald Duck", attackMission, 10, true);
+    private F15 f15 = new F15(2, "Spice250", "elint", "Donald Duck", attackMission, 10, true);
 
     @Test
-    public void testAttack() {
-        String expectedMessage = "Donald Duck: F15 Attacking suspect house with: Spice250X2";
+    public void testAttack() throws MissionTypeException {
+        String expectedMessage = "Donald Duck: F15 Attaking suspect house with: Spice250X2";
         String message = f15.attack();
         assertEquals(message, expectedMessage);
     }

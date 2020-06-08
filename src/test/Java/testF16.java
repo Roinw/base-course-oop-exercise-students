@@ -13,11 +13,11 @@ public class testF16 {
     AttackMission attackMission = new AttackMission("suspect house", coordinatesToAttack);
     BdaMission bdaMission = new BdaMission("suspect house", coordinatesToAttack);
     IntelligenceMission intelligenceMission = new IntelligenceMission("Deir al Balah", coordinatesToAttack);
-    private F16 f16 = new F16("thermal", 2, "Spice250", "Tuli", attackMission, 5, true);
+    private F16 f16 = new F16(2, "Spice250", "thermal", "Tuli", attackMission, 5, true);
 
     @Test
-    public void testAttack() {
-        String expectedMessage = "Tuli: F16 Attacking suspect house with: Spice250X2";
+    public void testAttack() throws MissionTypeException {
+        String expectedMessage = "Tuli: F16 Attaking suspect house with: Spice250X2";
         String message = f16.attack();
         assertEquals(message, expectedMessage);
     }
@@ -25,7 +25,7 @@ public class testF16 {
     @Test
     public void testBda() throws MissionTypeException {
         f16.setMission(bdaMission);
-        String expectedMessage = "Tuli: F16 taking pictures of suspect house with: thermal camera";
+        String expectedMessage = "Tuli: F16 taking pictures of suspect house with: thermal";
         String message = f16.preformBda();
         assertEquals(message, expectedMessage);
     }

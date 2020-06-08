@@ -1,19 +1,17 @@
 package Missions;
 
+import Entities.Coordinates;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class IntelligenceMission extends Mission {
 
-    @Override
-    public void begin() {
+    private String region;
 
-    }
-
-    @Override
-    public void cancel() {
-
-    }
-
-    @Override
-    public void finish() {
-
+    public IntelligenceMission(String region, Coordinates targetCoordinates) {
+        this.region = region;
+        this.targetCoordinates = targetCoordinates;
     }
 }
