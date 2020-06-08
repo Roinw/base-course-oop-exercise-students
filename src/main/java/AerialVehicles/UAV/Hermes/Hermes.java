@@ -6,11 +6,11 @@ import Missions.Mission;
 import lombok.Getter;
 import lombok.Setter;
 
-import static Shard.ShardConstants.HERMES_MAX_FLIGHT_HOURS_SINCE_LAST_REPAIR;
-
 @Setter
 @Getter
 public class Hermes extends UAV implements AerialBdaVehicle {
+
+    private static final int HERMES_MAX_FLIGHT_HOURS_SINCE_LAST_REPAIR = 150;
 
     protected String cameraType;
 

@@ -6,11 +6,11 @@ import Missions.Mission;
 import lombok.Getter;
 import lombok.Setter;
 
-import static Shard.ShardConstants.FIGHT_JET_MAX_FLIGHT_HOURS_SINCE_LAST_REPAIR;
-
 @Getter
 @Setter
 public class FightJet extends AerialVehicle implements AerialAttackVehicle {
+
+    private static final int FIGHT_JET_MAX_FLIGHT_HOURS_SINCE_LAST_REPAIR = 150;
 
     protected String missileType;
     protected int numOfMissiles;

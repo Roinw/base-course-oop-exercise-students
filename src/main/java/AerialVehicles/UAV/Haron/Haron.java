@@ -6,11 +6,11 @@ import Missions.Mission;
 import lombok.Getter;
 import lombok.Setter;
 
-import static Shard.ShardConstants.HARON_MAX_FLIGHT_HOURS_SINCE_LAST_REPAIR;
-
 @Getter
 @Setter
 public class Haron extends UAV implements AerialAttackVehicle {
+
+    private static final int HARON_MAX_FLIGHT_HOURS_SINCE_LAST_REPAIR = 150;
 
     protected String missileType;
     protected int numOfMissiles;
