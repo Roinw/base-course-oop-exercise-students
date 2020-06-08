@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 public class Hermes extends UAV implements AerialBdaVehicle {
 
-    private static final int HERMES_MAX_FLIGHT_HOURS_SINCE_LAST_REPAIR = 150;
+    private static final int HERMES_MAX_FLIGHT_HOURS_SINCE_LAST_REPAIR = 100;
 
     protected String cameraType;
 
