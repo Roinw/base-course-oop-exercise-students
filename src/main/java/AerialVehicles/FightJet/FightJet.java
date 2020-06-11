@@ -8,7 +8,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class FightJet extends AerialVehicle implements AerialAttackVehicle {
+public abstract class FightJet extends AerialVehicle implements AerialAttackVehicle {
 
     private static final int FIGHT_JET_MAX_FLIGHT_HOURS_SINCE_LAST_REPAIR = 250;
 

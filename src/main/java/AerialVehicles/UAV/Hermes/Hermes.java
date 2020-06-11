@@ -8,7 +8,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class Hermes extends UAV implements AerialBdaVehicle {
+public abstract class Hermes extends UAV implements AerialBdaVehicle {
 
     private static final int HERMES_MAX_FLIGHT_HOURS_SINCE_LAST_REPAIR = 100;
 
